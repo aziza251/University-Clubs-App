@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="club.Assign1">
+            
+    <StackLayout>
+      
+
+        <StackLayout Orientation="Vertical" HorizontalOptions="Center">
+            
+            <ScrollView>
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Spacing="20" Margin="10">
+                <Label Text="Available Clubs" FontAttributes="Bold" FontSize="20" TextColor="Black"/>
+                 <ListView x:Name="ClubList1"  ItemTapped="ClubList_ItemTapped">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Spacing="10" Margin="10">
+                                        <Label Text="{Binding club_ID}" TextColor="Purple" FontSize="15"/>
+                                        <Label Text="{Binding club_Name}" TextColor="Purple" FontSize="15"/>
+                                        <Label Text="{Binding club_Contact}" TextColor="Purple" FontSize="15"/>
+                                        <Label Text="{Binding club_language}" TextColor="Purple" FontSize="15"/>
+                                        <Label Text="{Binding club_Category}" TextColor="Purple" FontSize="15"/>
+                                    </StackLayout>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </StackLayout>
+            </ScrollView>
+
+            <ScrollView>
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Spacing="20" Margin="10">
+                <Label Text="Available Managers" FontAttributes="Bold" FontSize="20" TextColor="Black"/>
+                  <ListView x:Name="ManagerList" ItemTapped="ManagerList_ItemTapped">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Spacing="10" Margin="10">
+                                        <Label Text="{Binding manager_ID}" TextColor="Purple" FontSize="15"/>
+                                        <Label Text="{Binding manager_Name}" TextColor="Purple" FontSize="15"/>
+                                        <Label Text="{Binding manager_Identity}" TextColor="Purple" FontSize="15"/>
+                                        <Label Text="{Binding manager_Department}" TextColor="Purple" FontSize="15"/>
+                                        <Label Text="{Binding manager_Year}" TextColor="Purple" FontSize="15"/>
+                                    </StackLayout>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+            </StackLayout>
+            </ScrollView>
+
+
+            <Button x:Name="next" Text="Next" Clicked="next_Clicked" BackgroundColor="Blue" TextColor="White" WidthRequest="90" HorizontalOptions="Center"/>
+        </StackLayout>
+    </StackLayout>
+</ContentPage>

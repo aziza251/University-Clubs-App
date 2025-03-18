@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="club.CreateClub"
+             Title="CreateClub">
+    <VerticalStackLayout>
+        <Label 
+         
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+
+
+        <StackLayout Orientation="Vertical" HorizontalOptions="Center" Margin="20" >
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Spacing="10">
+
+            <StackLayout Orientation="Vertical" HorizontalOptions="Start" Spacing="10" Margin="10">
+                <Label Text="Club Name" BackgroundColor="Aquamarine" TextColor="Black" WidthRequest="100" HeightRequest="45" FontSize="15" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+                <Label Text="Club Bio" BackgroundColor="Aquamarine" TextColor="Black" WidthRequest="100" HeightRequest="45" FontSize="15" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+                <Label Text="Club Contact" BackgroundColor="Aquamarine" TextColor="Black" WidthRequest="100" HeightRequest="45" FontSize="15" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+            </StackLayout>
+             <StackLayout Orientation="Vertical" HorizontalOptions="End" Spacing="10" Margin="10">
+                <Entry x:Name="name" BackgroundColor="Aquamarine" TextColor="Black" WidthRequest="200"  FontSize="15" HorizontalTextAlignment="Center"/>
+                <Entry x:Name="bio" BackgroundColor="Aquamarine" TextColor="Black" WidthRequest="200"  FontSize="15" HorizontalTextAlignment="Center"/>
+                <Entry x:Name="contact" BackgroundColor="Aquamarine" TextColor="Black" WidthRequest="200"  FontSize="15" HorizontalTextAlignment="Center"/>
+                </StackLayout>
+            </StackLayout>
+
+            
+                <Label Text="Language" FontSize="20" TextColor="Black" FontAttributes="Bold" Margin="20" HorizontalOptions="Center"/>
+            
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Center" RadioButtonGroup.GroupName="language" Spacing="20">
+                  
+                    <RadioButton x:Name="english" Content="EN"  TextColor="Black"/>
+                    <RadioButton x:Name="turkish" Content="TUR"  TextColor="Black"/>
+                    <RadioButton x:Name="spanish" Content="SP"  TextColor="Black"/>
+
+                </StackLayout>
+
+
+            <Label Text="Category" FontSize="20" TextColor="Black" FontAttributes="Bold" Margin="20" HorizontalOptions="Center"/>
+
+
+
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center"  Spacing="10" Margin="20">
+                <CheckBox x:Name="fun"/>
+                    <Image Source="dancing.png" WidthRequest="50" HeightRequest="50"/>
+                <CheckBox x:Name="science"/>
+                <Image Source="reading.png" WidthRequest="50" HeightRequest="50"/>
+                <CheckBox x:Name="academy"/>
+                    <Image Source="sport.png" WidthRequest="50" HeightRequest="50"/>
+                <CheckBox x:Name="leisure"/>
+                    <Image Source="hobby.png" WidthRequest="50" HeightRequest="50"/>
+            </StackLayout>
+
+
+            <ScrollView>
+                <ListView x:Name="ClubList"  ItemTapped="ClubList_ItemTapped" >
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Spacing="10" Margin="10" >
+                                    <Label Text="{Binding club_ID}" TextColor="Purple" FontSize="15" />
+                                    <Label Text="{Binding club_Name}" TextColor="Purple" FontSize="15"  />
+                                    <Label Text="{Binding club_Contact}" TextColor="Purple" FontSize="15"  />
+                                    <Label Text="{Binding club_language}" TextColor="Purple" FontSize="15" />
+                                    <Label Text="{Binding club_Category}" TextColor="Purple" FontSize="15" />
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </ScrollView>
+
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Spacing="20" Margin="30">
+                <Button x:Name="add" Clicked="add_Clicked" Text="Add"  WidthRequest="100" BackgroundColor="Aquamarine" TextColor="Black"/>
+                <Button x:Name="show" Clicked="show_Clicked" Text="Show"  WidthRequest="100" BackgroundColor="Aquamarine" TextColor="Black"/>
+                <Button x:Name="delete" Clicked="delete_Clicked" Text="Delete"  IsEnabled="False" WidthRequest="100" BackgroundColor="Aquamarine" TextColor="Black"/>
+
+            </StackLayout>
+
+
+        </StackLayout>
+    </VerticalStackLayout>
+</ContentPage>

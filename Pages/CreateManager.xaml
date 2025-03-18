@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="club.CreateManager">
+             
+    <VerticalStackLayout>
+        <Label 
+            
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+
+
+        <StackLayout Orientation="Vertical" HorizontalOptions="Center" Margin="20" >
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Spacing="10">
+
+                <StackLayout Orientation="Vertical" HorizontalOptions="Start" Spacing="10" Margin="10">
+                    <Label Text="Manager Name" BackgroundColor="Aquamarine" TextColor="Black" WidthRequest="100" HeightRequest="45" FontSize="15" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+                    <Label Text="Manager ID" BackgroundColor="Aquamarine" TextColor="Black" WidthRequest="100" HeightRequest="45" FontSize="15" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+                    <Label Text="Department" BackgroundColor="Aquamarine" TextColor="Black" WidthRequest="100" HeightRequest="45" FontSize="15" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+                </StackLayout>
+                <StackLayout Orientation="Vertical" HorizontalOptions="End" Spacing="10" Margin="10">
+                    <Entry x:Name="manager_name" Placeholder="Name" BackgroundColor="Aquamarine" TextColor="Black" WidthRequest="200"  FontSize="15" HorizontalTextAlignment="Center"/>
+                    <Entry x:Name="manager_id" Placeholder="ID" BackgroundColor="Aquamarine" TextColor="Black" WidthRequest="200"  FontSize="15" HorizontalTextAlignment="Center"/>
+                    <Entry x:Name="dept" Placeholder="Department" BackgroundColor="Aquamarine" TextColor="Black" WidthRequest="200"  FontSize="15" HorizontalTextAlignment="Center"/>
+                </StackLayout>
+            </StackLayout>
+
+
+            <Label Text="Year" FontSize="20" TextColor="Black" FontAttributes="Bold" Margin="20"/>
+
+
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Margin="20" Spacing="20">
+                <StackLayout Orientation="Vertical" HorizontalOptions="Center" RadioButtonGroup.GroupName="year" Spacing="20">
+
+                <RadioButton x:Name="first" Content="First Year"  TextColor="Black"/>
+                <RadioButton x:Name="second" Content="Second Year"  TextColor="Black"/>
+            </StackLayout>
+            
+            <StackLayout Orientation="Vertical" HorizontalOptions="Center" RadioButtonGroup.GroupName="year" Spacing="20">
+                <RadioButton x:Name="third" Content="Third Year"  TextColor="Black"/>
+                <RadioButton x:Name="fourth" Content="Fourth Year"  TextColor="Black"/>
+
+            </StackLayout>
+
+            </StackLayout>
+
+
+            <ScrollView>
+                <ListView x:Name="ManagerList" ItemTapped="ManagerList_ItemTapped">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Spacing="10" Margin="10" >
+                                    <Label Text="{Binding manager_ID}" TextColor="Purple" FontSize="15" />
+                                    <Label Text="{Binding manager_Name}" TextColor="Purple" FontSize="15"  />
+                                    <Label Text="{Binding manager_Identity}" TextColor="Purple" FontSize="15"  />
+                                    <Label Text="{Binding manager_Department}" TextColor="Purple" FontSize="15" />
+                                    <Label Text="{Binding manager_Year}" TextColor="Purple" FontSize="15" />
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </ScrollView>
+
+
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Spacing="20" Margin="30">
+                <Button x:Name="add" Text="Add"  Clicked="add_Clicked" WidthRequest="100" BackgroundColor="Aquamarine" TextColor="Black"/>
+                <Button x:Name="show" Text="Show" Clicked="show_Clicked" WidthRequest="100" BackgroundColor="Aquamarine" TextColor="Black"/>
+                <Button x:Name="delete" Text="Delete" Clicked="delete_Clicked" IsEnabled="False" WidthRequest="100" BackgroundColor="Aquamarine" TextColor="Black"/>
+
+            </StackLayout>
+
+        </StackLayout>
+    </VerticalStackLayout>
+</ContentPage>

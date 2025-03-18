@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="club.OnlineEvent"
+             Title="OnlineEvent">
+    <VerticalStackLayout>
+        <Label 
+         
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+
+
+
+        <StackLayout Orientation="Vertical" HorizontalOptions="Center" Margin="20" >
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Spacing="10">
+
+                <Entry x:Name="event_name" Placeholder="Event Name" BackgroundColor="Aquamarine" TextColor="Black" WidthRequest="200"  FontSize="15" HorizontalTextAlignment="Center"/>
+                <Entry x:Name="event_date" Placeholder="Event Date" BackgroundColor="Aquamarine" TextColor="Black" WidthRequest="200"  FontSize="15" HorizontalTextAlignment="Center"/>
+                <Entry x:Name="event_time" Placeholder="Event Time" BackgroundColor="Aquamarine" TextColor="Black" WidthRequest="200"  FontSize="15" HorizontalTextAlignment="Center"/>
+                
+            </StackLayout>
+            </StackLayout>
+
+
+            <Label Text="Meeting Platform" FontSize="20" TextColor="Black" FontAttributes="Bold" Margin="20"/>
+
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Center" RadioButtonGroup.GroupName="meeting_platform" Spacing="20">
+
+                    <RadioButton x:Name="zoom" Content="Zoom "  TextColor="Black"/>
+                    <RadioButton x:Name="google" Content="Google Meets"  TextColor="Black"/>
+                    
+                </StackLayout>
+
+            <Label Text="Event Category" FontSize="20" TextColor="Black" FontAttributes="Bold" Margin="20"/>
+                
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center" RadioButtonGroup.GroupName="event_type" Spacing="20">
+                    <RadioButton x:Name="fun" Content="Fun"  TextColor="Black"/>
+                    <RadioButton x:Name="sport" Content="Sport"  TextColor="Black"/>
+                    <RadioButton x:Name="tech" Content="Tech"  TextColor="Black"/>
+
+            </StackLayout>
+
+
+        <ScrollView>
+            <ListView x:Name="OnlineList" ItemTapped="OvlineList_ItemTapped" >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Spacing="10" Margin="10" >
+                                <Label Text="{Binding online_event_ID}" TextColor="Purple" FontSize="15" />
+                                <Label Text="{Binding online_event_name}" TextColor="Purple" FontSize="15"  />
+                                <Label Text="{Binding online_event_date}" TextColor="Purple" FontSize="15"  />
+                                <Label Text="{Binding online_event_time}" TextColor="Purple" FontSize="15" />
+                                <Label Text="{Binding online_event_platform}" TextColor="Purple" FontSize="15" />
+                                <Label Text="{Binding online_event_category}" TextColor="Purple" FontSize="15" />
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </ScrollView>
+
+
+        <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Spacing="20" Margin="30">
+                <Button x:Name="add_event" Clicked="add_event_Clicked" Text="Create event"  WidthRequest="120" BackgroundColor="Aquamarine" TextColor="Black"/>
+                <Button x:Name="show_event" Clicked="show_event_Clicked" Text="Show event"  WidthRequest="120" BackgroundColor="Aquamarine" TextColor="Black"/>
+                <Button x:Name="delete_event" Clicked="delete_event_Clicked" Text="Delete event"  IsEnabled="False" WidthRequest="120" BackgroundColor="Aquamarine" TextColor="Black"/>
+            <Button x:Name="back" Clicked="back_Clicked" Text="Back"  WidthRequest="100" BackgroundColor="Aquamarine" TextColor="Black"/>
+
+        </StackLayout>
+
+    </VerticalStackLayout>
+</ContentPage>

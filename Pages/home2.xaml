@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="club.home2"
+             Title="home2">
+    <VerticalStackLayout>
+        <Label 
+           
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+
+
+        <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Spacing="20" Margin="30">
+            <Image Source="logo.jpg" HeightRequest="300" WidthRequest="300"/>
+        </StackLayout>
+
+        <StackLayout Orientation="Horizontal" HorizontalOptions="Center" >
+            <StackLayout Orientation="Vertical" HorizontalOptions="Center" Spacing="10">
+
+                <Button x:Name="next" Text="Next" Clicked="next_Clicked"  BackgroundColor="Blue" TextColor="White" WidthRequest="90" HorizontalOptions="Center"/>
+
+            </StackLayout>
+        </StackLayout>
+    </VerticalStackLayout>
+</ContentPage>

@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="club.MainPage">
+    
+    <StackLayout>
+    <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Margin="100">
+    <Label Text="Welcome to our site" 
+    TextColor="Red"
+    FontSize="30"
+    FontAttributes="Bold"/>
+
+    </StackLayout>
+
+    <StackLayout Orientation="Horizontal" HorizontalOptions="Center" >
+        <StackLayout Orientation="Vertical" HorizontalOptions="Center" Spacing="10">
+
+            <Label Text="Enter your name" TextColor="White" FontSize="20"/>
+            <Entry x:Name="your_Name" WidthRequest="250" TextColor="Red" BackgroundColor="white"/>
+            <Button x:Name="login" Text="Login" Clicked="login_Clicked" BackgroundColor="Blue" TextColor="White" WidthRequest="90" HorizontalOptions="Center"/>
+
+        </StackLayout>
+        </StackLayout>
+
+
+    </StackLayout>
+</ContentPage>

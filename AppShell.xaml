@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="club.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:club"
+    Shell.FlyoutBehavior="Disabled"
+    Title="club">
+
+    <ShellContent
+        Title="Home"
+        ContentTemplate="{DataTemplate local:MainPage}"
+        Route="MainPage" />
+    <ShellContent
+    Title="Home"
+    ContentTemplate="{DataTemplate local:OnlineEvent}"
+    Route="OnlineEvent" />
+    
+    <ShellContent
+    Title="Home"
+    ContentTemplate="{DataTemplate local:OfflineEvent}"
+    Route="OfflineEvent" />
+
+    <ShellContent
+ Title="Home"
+ ContentTemplate="{DataTemplate local:Assign2}"
+ Route="Assign2" />
+
+    <TabBar>
+        <Tab Title="Home2">
+            <ShellContent ContentTemplate="{DataTemplate local:home2}" Route="home2"/>
+        </Tab>
+
+        <Tab Title="Create Club">
+            <ShellContent ContentTemplate="{DataTemplate local:CreateClub}" Route="CreateClub"/>
+        </Tab>
+
+        <Tab Title="Create Manager">
+            <ShellContent ContentTemplate="{DataTemplate local:CreateManager}" Route="CreateManager"/>
+        </Tab>
+
+        <Tab Title="Create Event">
+            <ShellContent ContentTemplate ="{DataTemplate local:CreateEvent}" Route="CreateEvent"/>
+        </Tab>
+
+        <Tab Title="Assign Manager">
+            <ShellContent ContentTemplate ="{DataTemplate local:Assign1}" Route="Assign1"/>
+        </Tab>
+
+    </TabBar>
+
+</Shell>

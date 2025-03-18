@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="club.Assign2">
+             
+    <VerticalStackLayout>
+        <Label 
+           
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+
+        <ScrollView>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Spacing="20" Margin="10">
+                <Label Text="Available Clubs" FontAttributes="Bold" FontSize="20" TextColor="Black"/>
+                <ListView x:Name="AssignList" ItemTapped="AssignList_ItemTapped">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Spacing="10" Margin="10">
+                                    <Label Text="{Binding assign_ID}" TextColor="Purple" FontSize="15"/>
+                                    <Label Text="{Binding assign_club}" TextColor="Purple" FontSize="15"/>
+                                    <Label Text="{Binding assign_manager}" TextColor="Purple" FontSize="15"/>
+                                   
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+        </ScrollView>
+
+
+        <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Spacing="20" Margin="30">
+            <Button x:Name="assign" Clicked="assign_Clicked" Text="Assign"  WidthRequest="100" BackgroundColor="Aquamarine" TextColor="Black"/>
+            <Button x:Name="delete" Clicked="delete_Clicked" Text="Delete"  IsEnabled="False" WidthRequest="100" BackgroundColor="Aquamarine" TextColor="Black"/>
+            <Button x:Name="home" Clicked="home_Clicked" Text="home"  WidthRequest="100" BackgroundColor="Aquamarine" TextColor="Black"/>
+
+        </StackLayout>
+    </VerticalStackLayout>
+</ContentPage>
